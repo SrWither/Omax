@@ -31,8 +31,6 @@ KERNEL_OBJS=\
 $(KERNEL_ARCH_OBJS) \
 kernel/kernel.o \
 kernel/ssp.o \
-kernel/cpu/gdt.o \
-kernel/cpu/idt.o \
 
 OBJS=\
 $(ARCHDIR)/crti.o \
