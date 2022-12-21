@@ -32,6 +32,7 @@ $(KERNEL_ARCH_OBJS) \
 kernel/kernel.o \
 kernel/ssp.o \
 kernel/cpu/gdt.o \
+kernel/cpu/idt.o \
 
 OBJS=\
 $(ARCHDIR)/crti.o \
@@ -50,7 +51,7 @@ $(ARCHDIR)/crtend.o \
 $(ARCHDIR)/crtn.o \
 
 .PHONY: all clean install install-headers install-kernel
-.SUFFIXES: .o .c .S
+.SUFFIXES: .o .c .S .nasm
 
 all: omax.kernel
 
@@ -66,6 +67,9 @@ $(ARCHDIR)/crtbegin.o $(ARCHDIR)/crtend.o:
 
 .S.o:
 	$(CC) -MD -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
+
+.nasm.o:
+	nasm -felf32 $< -o $@
 
 clean:
 	rm -f omax.kernel
