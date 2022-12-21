@@ -3,5 +3,5 @@
 
 void kernel_main(void) {
   terminal_initialize();
-  printf("Hola Kernel Mundo!\n");
+  printf("Hola Kernel Mundo!\n"); 
 }
