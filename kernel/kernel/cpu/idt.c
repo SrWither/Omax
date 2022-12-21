@@ -11,12 +11,10 @@ struct idt_entry{
   unsigned short base_hi;
 } __attribute__((packed));
 
-
 struct idt_ptr{
   unsigned short limit;
   unsigned int base;
 } __attribute__((packed));
-
 
 struct idt_entry idt[256];
 struct idt_ptr idtp;
@@ -37,6 +35,5 @@ void idt_install(){
   idtp.base = (uint32_t)&idt;
 
   memset(&idt, 0, sizeof(struct idt_entry) * 256);
-
   idt_load();
 }

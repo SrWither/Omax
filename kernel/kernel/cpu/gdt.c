@@ -14,6 +14,5 @@ void init_gdt(){
 	GDTStruct.Limit = (sizeof(struct GDT)) - 1;
 	GDTStruct.Base = (uint32_t) &defaultGDT;
 	gdt_load(&GDTStruct);
-
 	printf(" Finished initializing the GDT. ");
 }
