@@ -1,4 +1,4 @@
-#include "common.h"
+#include <common.h>
 #include <kernel/serial.h>
 
 void serial_configure_baud_rate(unsigned short com, unsigned short divisor){
