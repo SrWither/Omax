@@ -5,9 +5,7 @@
 
 void kernel_main(void) {
   // Init gdt and idt
-  init_gdt();
-  idt_install();
-  
+
   // Init term
   terminal_initialize();
   printf("Kernel: Omax\nFilesystem: NULL\nLibc: Minimal\nLibc++: NULL");
